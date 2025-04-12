@@ -11,8 +11,8 @@ RUN msiexec /i pwsh.msi /qn
 RUN powershell -Command "Set-ExecutionPolicy RemoteSigned -Scope LocalMachine -Force"
 
 # Copy project files into container
-COPY . C:\lcapy-env
-WORKDIR C:\lcapy-env
+COPY . C:/lcapy-w64-dev-env
+WORKDIR C:/lcapy-w64-dev-env
 
 # Default command runs the test harness
 CMD ["pwsh.exe", "-File", "run-all-tests.ps1"]
